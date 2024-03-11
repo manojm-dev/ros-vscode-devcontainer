@@ -3,7 +3,7 @@
     "privileged": true,
     "remoteUser": "root",
     "build": {
-        "dockerfile": "Dockerfile.moveit"
+        "dockerfile": "Dockerfile.ros2"
     },
     "workspaceFolder": "/root/ws/",
     "workspaceMount": "source=${localWorkspaceFolder}/src,target=/root/ws/src,type=bind",
