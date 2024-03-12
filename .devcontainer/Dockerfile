@@ -9,6 +9,9 @@ RUN apt update && apt upgrade -y && apt install -y \
     python3-pip \
     python3-colcon-common-extensions
 
+RUN apt install -y \
+    ros-humble-rosbridge-server
+
 RUN mkdir -p /root/ws/src
 
 RUN echo "#ros" >> /root/.bashrc && \
