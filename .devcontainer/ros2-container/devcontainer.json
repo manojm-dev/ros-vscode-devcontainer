@@ -5,7 +5,7 @@
         "dockerfile": "Dockerfile"
     },
     "workspaceFolder": "/root/ws",
-    "workspaceMount": "source=${localWorkspaceFolder}/ros2_learn,target=/root/ws/src,type=bind",
+    "workspaceMount": "source=${localWorkspaceFolder}/learn_ros2,target=/root/ws/src,type=bind",
     "customizations": {
         "vscode": {
             "extensions":[
