@@ -1,12 +1,10 @@
 {
     "name": "Moveit2 Tutorials Workspace",
-    "privileged": true,
-    "remoteUser": "root",
     "build": {
         "dockerfile": "Dockerfile"
     },
     "workspaceFolder": "/root/ws/",
-    "workspaceMount": "source=${localWorkspaceFolder}/src,target=/root/ws/src,type=bind",
+    "workspaceMount": "source=/home/manoj/ros_ws/ros_ws/workspace,target=/root/ws/,type=bind",
     "customizations": {
         "vscode": {
             "extensions":[
@@ -26,5 +24,5 @@
        "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached",
        "source=/dev/dri,target=/dev/dri,type=bind,consistency=cached"
     ],
-    "postCreateCommand": "sudo rosdep update && sudo rosdep install --from-paths src --ignore-src -y && sudo chown -R $(whoami) /root/${remoteUser}/ws/"
+    "postCreateCommand": "sudo rosdep update && sudo rosdep install --from-paths src --ignore-src -y && sudo chown -R $(whoami) /root/ws/"
 }
