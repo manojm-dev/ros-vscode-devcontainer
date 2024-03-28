@@ -1,12 +1,11 @@
 {
-    "name": "ROS 2 Development Container",
+    "name": "moveit2",
     "privileged": true,
-    "remoteUser": "root",
     "build": {
         "dockerfile": "Dockerfile"
     },
-    "workspaceFolder": "/root/ws/",
-    "workspaceMount": "source=${localWorkspaceFolder}/src,target=/root/ws/src,type=bind",
+    "workspaceFolder": "/root/ws",
+    "workspaceMount": "source=${localWorkspaceFolder}/moveit2_learn,target=/root/ws/src,type=bind",
     "customizations": {
         "vscode": {
             "extensions":[
@@ -30,10 +29,7 @@
     ],
     "mounts": [
        "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached",
-       "source=/dev/dri,target=/dev/dri,type=bind,consistency=cached",
-       "source=${localWorkspaceFolder}/../cache/humble/build,target=/root/ws/build,type=bind",
-       "source=${localWorkspaceFolder}/../cache/humble/install,target=/root/ws/install,type=bind",
-       "source=${localWorkspaceFolder}/../cache/humble/log,target=/root/ws/log,type=bind"
+        "source=/dev/dri,target=/dev/dri,type=bind,consistency=cached"
     ],
-    "postCreateCommand": "sudo rosdep update && sudo rosdep install --from-paths src --ignore-src -y"
+    "postCreateCommand": "sudo rosdep update && sudo rosdep install --from-paths src --ignore-src -y && sudo chown -R $(whoami) /root/ws/"
 }
